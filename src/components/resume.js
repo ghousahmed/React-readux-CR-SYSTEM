@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';
-import ComponentRoute from './componentsRoute'
 
-class About extends Component {
+
+class Resume extends Component {
+   
     render() {
         return (
             <div>
-                <ComponentRoute />
+              <form action="">
+                  <input type="text"/>
+                  <input type="text"/>
+                  <input type="text"/>
+                  <input type="text"/>
+                  <input type="text"/>
+              </form>
             </div>
         )
     }
@@ -24,4 +29,4 @@ class About extends Component {
 //     })
 // }
 
-export default connect(mapStateToProp,mapDispatchToProp)(About);
+export default Resume;

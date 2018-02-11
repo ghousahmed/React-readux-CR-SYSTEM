@@ -4,22 +4,22 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import * as firebase from "firebase"
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-
-var config = {
-    apiKey: "AIzaSyBzGcaPx2uvbi30sbFowUIenmmBSeKN8KE",
-    authDomain: "planapp-372b1.firebaseapp.com",
-    databaseURL: "https://planapp-372b1.firebaseio.com",
-    projectId: "planapp-372b1",
-    storageBucket: "planapp-372b1.appspot.com",
-    messagingSenderId: "183415027394"
+ var config = {
+    apiKey: "AIzaSyBzO38HpHoh7jIE9D2curFVHAHQjwMkMfg",
+    authDomain: "index-83d18.firebaseapp.com",
+    databaseURL: "https://index-83d18.firebaseio.com",
+    projectId: "index-83d18",
+    storageBucket: "index-83d18.appspot.com",
+    messagingSenderId: "671568613729"
   };
   firebase.initializeApp(config);
 
 const render = () => ReactDOM.render(
-   
-        <App />,
-    document.getElementById('root')
-);
+    <MuiThemeProvider>
+
+    <App/>
+</MuiThemeProvider>, document.getElementById('root'));
 
 render();

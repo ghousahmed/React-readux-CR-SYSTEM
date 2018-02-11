@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeUserName } from '../store/action/action';
+import  Bar from './appbar'
+
 class Home extends Component {
 
     _changeData() {
@@ -12,14 +14,15 @@ class Home extends Component {
     render() {
         return (
             <div>
+                <Bar />
                 {/* <h1>Hello World {this.props.userName}</h1>
                 <button onClick={this._changeData.bind(this)}>Change</button>
                 <Link to='/about'>Go to About</Link> */}
                 <center>
-                    <h1>Signup Login Boiler Plate</h1>
-                    <Link to='/login'><button className="btn btn-primary">Login</button></Link><br />
+                    <h1>CR SYSTEM</h1>
+                    <Link to='/studentlogin'><button className="btn btn-primary">Student</button></Link><br />
                     <br />
-                    <Link to='/signup'><button className="btn btn-success">Signup</button></Link>
+                    <Link to='/companylogin'><button className="btn btn-success">Company</button></Link>
                 </center>
             </div>
         )

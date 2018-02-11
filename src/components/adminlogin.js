@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { SigninUser } from '../store/action/action';
+import { SigninAdmin } from '../store/action/action';
+import  Bar from './appbar'
 
 
-class Login extends Component {
+
+class Admin extends Component {
     constructor(props){
         super(props)
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            profile: "Admin"
         }
     
     }
@@ -21,9 +24,10 @@ class Login extends Component {
         ev.preventDefault()
         let data = {
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            profile: this.state.profile
         }
-        this.props.SigninUser(data);
+        this.props.SigninAdmin(data);
         }
         signup(){
             this.props.history.push('/signup')
@@ -31,10 +35,10 @@ class Login extends Component {
     render() {
         return (
             <div>
-                
+                <Bar />
                 <div className="container">
                 <form onSubmit={this.submit.bind(this)}>
-                <h1>Signin</h1>
+                <h1>Admin Login</h1>
                 <input type="email" name="email" onChange={this.handleChange.bind(this)} placeholder="Email"/>
                 <br />
                 <br />
@@ -58,9 +62,9 @@ function mapStateToProp(state) {
 }
 function mapDispatchToProp(dispatch) {
     return ({
-        SigninUser: (data) => { dispatch(SigninUser(data)) }
+        SigninAdmin: (data) => { dispatch(SigninAdmin(data)) }
     })
 }
 
 
-export default connect(mapStateToProp, mapDispatchToProp)(Login);
+export default connect(mapStateToProp, mapDispatchToProp)(Admin);
